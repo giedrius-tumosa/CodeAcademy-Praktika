@@ -1,0 +1,79 @@
+[class^="part"] {
+  height: 300px;
+  width: 25%;
+  border: 1px solid orange;
+  float: left;
+  margin: 0 10px;
+  padding: 10px;
+}
+h2 {
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+/* Part 1 */
+
+.part1 button {
+  width: min(200px, 100%);
+  height: 100px;
+  display: block;
+  margin: 0 auto;
+  background-color: blue;
+  color: white;
+  font-size: larger;
+  transition: all 1s linear;
+}
+.part1 button:hover {
+  background-color: #fdd19b;
+  color: #000;
+}
+
+/* Part 2 */
+
+.circle {
+  width: 60px;
+  height: 60px;
+  background-color: #b700ff;
+  border-radius: 50%;
+  margin: 0 auto;
+  /* animation properties */
+  animation-name: levitation;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes levitation {
+  100% {
+    transform: translateY(100px);
+  }
+}
+
+/* Part 3 */
+
+.bento {
+  width: min(100px, 100%);
+  height: 100px;
+  background-color: #1b660c;
+  margin: 0 auto;
+  animation-name: bentoBox;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  transform-origin: bottom;
+}
+
+@keyframes bentoBox {
+  0% {
+    transform: skewX(10deg) scaleY(1.1);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: skewX(-10deg) scaleY(1.1);
+  }
+}

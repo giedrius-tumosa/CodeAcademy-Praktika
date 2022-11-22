@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+.wrapper {
+  max-width: 1000px;
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  background-color: #c5c5c5;
+  display: grid;
+  grid-template-columns: repeat(12, 8.33%);
+  grid-template-rows: repeat(12, 8.33%);
+  column-gap: 5px;
+  justify-content: center;
+  align-content: center;
+}
+
+/* Images */
+figure {
+  width: 300px;
+  height: 300px;
+}
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+article {
+  width: 300px;
+  height: 300px;
+  padding: 20px;
+  background-color: #ffffffe3;
+}
+
+/* Font styles */
+
+.date {
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #000000b0;
+}
+article p {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #000000b0;
+}
+article a:any-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #000000b0;
+}
+
+/* Layout */
+/* Article layout */
+article {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  gap: 20px;
+}
+article main {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+article header {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+}
+article h2 {
+  position: relative;
+}
+article h2:after {
+  content: " ";
+  width: 50px;
+  height: 1px;
+  border-top: 3px solid black;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+}
+
+/* Global grid layout */
+figure:nth-child(1) {
+  grid-column: 1 / 7;
+  grid-row: 1 / 6;
+  align-self: flex-end;
+  justify-self: flex-end;
+}
+figure:nth-child(2) {
+  grid-column: 7 / -1;
+  grid-row: 1 / 6;
+  align-self: flex-end;
+  justify-self: flex-start;
+}
+figure:nth-child(3) {
+  grid-column: 1 / 7;
+  grid-row: 7 / -1;
+  align-self: flex-start;
+  justify-self: flex-end;
+}
+figure:nth-child(4) {
+  grid-column: 7 / -1;
+  grid-row: 7 / -1;
+  align-self: flex-start;
+  justify-self: flex-start;
+}
+
+.art-1 {
+  grid-column: 2 / 6;
+  grid-row: 3 / 7;
+  align-self: flex-start;
+}
+.art-2 {
+  grid-column: 8 / 12;
+  grid-row: 3 / 7;
+  align-self: flex-start;
+  justify-self: flex-end;
+}
+.art-3 {
+  grid-column: 2 / 6;
+  grid-row: 8 / 12;
+  align-self: flex-start;
+}
+.art-4 {
+  grid-column: 8 / 12;
+  grid-row: 8 / 12;
+  align-self: flex-start;
+  justify-self: flex-end;
+}

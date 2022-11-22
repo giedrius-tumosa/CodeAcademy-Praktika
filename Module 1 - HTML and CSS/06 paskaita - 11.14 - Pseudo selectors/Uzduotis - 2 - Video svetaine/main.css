@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a:any-link {
+  text-decoration: none;
+  color: #fff;
+}
+ul {
+  list-style-type: none;
+}
+
+/* aside */
+body {
+  width: 100%;
+  min-height: 100vh;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+.favourite-movies-heading {
+  padding-block: 20px;
+  font-size: 40px;
+  font-weight: 500;
+}
+aside > * {
+  margin-inline: 20px;
+}
+nav > * {
+  padding-block: 30px;
+  border-top: 1px solid #000;
+}
+.movie-other-list {
+  border-bottom: 1px solid #000;
+}
+.fav-movies-nav {
+  padding-left: 45px;
+}
+.fav-movies-nav > ul > li {
+  margin-bottom: 20px;
+}
+aside {
+  max-width: 300px;
+  background-color: #24282c;
+  color: #fff;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+.action-adventure {
+  padding-left: 40px;
+}
+.action-adventure a {
+  color: grey;
+  font-weight: 300;
+}
+.action-adventure a:hover {
+  color: #fff;
+  font-weight: 400;
+}
+.movie-type-list > li:first-child {
+  list-style-type: disc;
+}
+.movie-type-list > li:first-child::marker {
+  color: #ff0000;
+  font-size: larger;
+}
+aside li:last-child {
+  margin-bottom: 0;
+}
+.action-adventure {
+  list-style-type: circle;
+  font-size: 16px;
+}
+.action-adventure li {
+  margin-top: 10px;
+}
+.action-adventure > li::marker {
+  color: red;
+  font-size: larger;
+}
+
+/* MAIN */
+.page-right-side {
+  margin-left: 300px;
+}
+.page-right-side > * {
+  padding-inline: 20px;
+}
+.page-right-side > header > h2 {
+  display: inline-block;
+}
+header {
+  height: 70px;
+  border-bottom: 2px solid grey;
+  margin-block: 30px;
+}
+header > h2 {
+  font-size: 20px;
+}
+
+header > h2 span {
+  color: grey;
+  font-weight: 400;
+  margin-left: 20px;
+}
+.header-links {
+  float: right;
+}
+
+.header-links a:any-link {
+  color: grey;
+  border: none;
+  margin-inline: 10px;
+}
+.header-links a:hover {
+  color: skyblue;
+}
+main > article {
+  margin-block: 40px;
+}
+
+main > article > * {
+  margin-block: 10px;
+}
+
+main > article > :is(h4, p) {
+  font-size: 16px;
+}
+
+main > article > p {
+  color: grey;
+}

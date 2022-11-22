@@ -1,0 +1,135 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  width: 100%;
+}
+.wrapper {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(36, 2.78%);
+  grid-template-rows: repeat(65, 33px);
+}
+/* MAIN Layout */
+
+.margin-left {
+  grid-row: 1 / -1;
+  grid-column: 1 / 4;
+}
+.margin-right {
+  grid-row: 1 / -1;
+  grid-column: -4 / -1;
+}
+.menu,
+.hero,
+.about,
+.contact,
+.footer {
+  grid-column: 4 / -4;
+}
+.menu {
+  grid-row: 1 / 5;
+}
+.footer {
+  grid-row: -5 / -1;
+}
+.hero {
+  grid-row: 5 / 24;
+}
+.about {
+  grid-row: 24 / 43;
+}
+.contact {
+  grid-row: 43 / 62;
+}
+
+/* Internal layout */
+
+.menu-logo {
+  grid-column: 4 / 9;
+  grid-row: 1 / 5;
+}
+.menu-links {
+  grid-column: 19 / -4;
+  grid-row: 1 / 5;
+}
+.hero-title {
+  grid-column: 7 / 17;
+  grid-row: 7 / 10;
+}
+.hero-description {
+  grid-column: 9 / 18;
+  grid-row: 11 / 18;
+}
+.hero-foto {
+  grid-column: 19 / -6;
+  grid-row: 7 / 21;
+}
+.about-title {
+  grid-column: 9 / 30;
+  grid-row: 25 / 28;
+}
+.about-article1 {
+  grid-column: 5 / 22;
+  grid-row: 30 / 35;
+}
+.about-article2 {
+  grid-column: 5 / 22;
+  grid-row: 37 / 42;
+}
+.about-article3 {
+  grid-column: -13 / -5;
+  grid-row: 30 / 42;
+}
+.contact-contacts {
+  grid-column: 9 / 30;
+  grid-row: 44 / 47;
+}
+.contact-contact1 {
+  grid-column: 5 / 12;
+  grid-row: 49 / 60;
+}
+.contact-contact2 {
+  grid-row: 49 / 60;
+  grid-column: 16 / -15;
+}
+.contact-contact3 {
+  grid-row: 49 / 60;
+  grid-column: -11 / -5;
+}
+.footer-text {
+  grid-row: 63 / 65;
+  grid-column: 10 / 30;
+}
+/* Background colors */
+
+.bg-blue {
+  background-color: #4472c4;
+}
+.bg-orange {
+  background-color: #ffc000;
+}
+.bg-grey {
+  background-color: #a5a5a5;
+}
+.bg-darkBlue {
+  background-color: #44546a;
+}
+.bg-lightGrey {
+  background-color: #e7e6e6;
+}
+.bg-green {
+  background-color: #70ad47;
+}
+
+/* Other */
+.inner-element {
+  border: 2px solid #000;
+  display: grid;
+  place-content: center;
+  font-size: 32px;
+}

@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Layout */
+body {
+  height: 100vh;
+  font-family: "Nunito", sans-serif;
+  background-color: rgb(39, 39, 39);
+}
+.card-wrapper {
+  margin: 50px auto;
+  width: 80%;
+  position: relative;
+  min-height: 500px;
+}
+.display-block {
+  display: block;
+}
+.inline-block {
+  display: inline-block;
+}
+.card-aside {
+  min-height: 500px;
+  width: 35%;
+  background-color: #807182;
+}
+.card-main {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  margin-left: 35%;
+  background-color: #f9c7c2;
+  padding-top: 30px;
+}
+.card-main > * {
+  padding-inline: 40px;
+}
+.card-main h1 {
+  margin-bottom: 15px;
+}
+.card-form > section {
+  padding-block: 5px;
+}
+.card-form > section > * {
+  margin-block: 5px;
+}
+.card-form > section > *:not(.pet-weight) {
+  width: 49%;
+}
+
+/* Radio buttons */
+
+input[type="radio"] {
+  display: none;
+}
+input[type="file"] {
+  display: none;
+}
+input[type="file"]:hover + label {
+  cursor: pointer;
+}
+:is(.pet-gender, .pet-surgery, .pet-weight) label {
+  display: inline-block;
+  text-align: center;
+  width: 100px;
+  height: 25px;
+  line-height: 24px;
+  border-radius: 2px;
+}
+[class*="option-box"] {
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  width: fit-content;
+}
+:is(.pet-gender, .pet-surgery, .pet-weight) label:hover {
+  background-color: #f9c6c271;
+}
+:is(.pet-gender, .pet-surgery, .pet-weight) input:checked + label {
+  background-color: #f7b1ab;
+}
+
+/* Main footer */
+
+footer {
+  height: 87px;
+  background-color: white;
+}
+
+button {
+  width: 100px;
+  height: 35px;
+  margin-top: 20px;
+  border-radius: 20px;
+}
+button:first-child {
+  background-color: white;
+  border: 1px solid #807182;
+}
+button:nth-child(2) {
+  float: right;
+  border: none;
+  background-color: #807182;
+  color: white;
+}

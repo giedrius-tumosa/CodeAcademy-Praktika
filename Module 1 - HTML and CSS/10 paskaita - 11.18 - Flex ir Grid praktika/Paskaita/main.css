@@ -1,0 +1,51 @@
+* {
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+}
+.box {
+  width: 1000px;
+  height: 400px;
+}
+.bg-red {
+  background-color: red;
+}
+.flex-way {
+  display: flex;
+  gap: 10px;
+}
+.flex-way > * {
+  flex: 1;
+}
+.flex-way .left {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 10px;
+}
+.flex-way .left > * {
+  flex: 1;
+}
+.flex-way .lower {
+  display: flex;
+  gap: 10px;
+}
+.flex-way .lower > * {
+  flex: 1;
+}
+
+/* Grid */
+.grid-way > * {
+  background-color: skyblue;
+  color: black;
+}
+.grid-way {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(4, 1fr);
+  gap: 10px;
+}
+.grid-way :nth-child(1) {
+  grid-area: span 2 / span 2;
+}
+.grid-way :nth-child(2) {
+  grid-column: span 2;
+}

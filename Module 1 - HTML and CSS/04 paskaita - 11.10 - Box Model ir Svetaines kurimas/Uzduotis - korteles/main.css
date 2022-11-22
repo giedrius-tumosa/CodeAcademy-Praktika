@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+}
+.card {
+  width: 600px;
+  height: 300px;
+  box-shadow: 5px 5px 20px #808080;
+  padding-block: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.2;
+}
+.content-area {
+  width: 580px;
+  height: 280px;
+  margin: 0 auto;
+  border: 2px solid #8774db;
+  background-image: url(./images/Center_New_York_City_dllu.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.info-box {
+  width: 250px;
+  height: 200px;
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  padding: 10px 16px;
+  text-align: center;
+  font-size: 12px;
+  background-color: #fff;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 0.8s;
+}
+.card:hover .info-box {
+  opacity: 1;
+}
+.text-wrap {
+  width: 100%;
+  transform: translateY(25%);
+}
+
+.text-wrap > h3 {
+  font-size: 16px;
+}
+.br10 {
+  border-radius: 10px;
+}

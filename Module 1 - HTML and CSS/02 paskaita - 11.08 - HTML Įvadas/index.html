@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>02 paskaita - 11.08 - HTML Įvadas</title>
+    <link rel="icon" href="./images/490091.png" />
+  </head>
+  <body>
+    <!-- FORMOS -->
+    <div>
+      <h3>Forma</h3>
+
+      <form id="formosUzduotis" action="">
+        <!-- Vardas -->
+        <div>
+          <label for="vardas">Pilnas vardas:</label><br />
+          <input type="text" id="vardas" name="vardas" />
+        </div>
+        <br />
+        <!-- Email -->
+        <div>
+          <label for="email">Elektroninis paštas:</label><br />
+          <input type="email" name="email" id="email" /><br />
+        </div>
+        <br />
+        <!-- Password -->
+        <div>
+          <label for="password">Slaptažodis:</label><br />
+          <input type="password" />
+        </div>
+        <br />
+        <!-- Gender -->
+        <div>
+          <label for="gender">Lytis:</label><br />
+          <select name="gender" id="gender">
+            <option value="male">Vyras</option>
+            <option value="female">Moteris</option>
+            <option value="other">Kita</option>
+          </select>
+        </div>
+        <br />
+        <!-- Comment -->
+        <div>
+          <label for="comment">Komentaras:</label><br />
+          <textarea
+            name="comment"
+            id="comment"
+            cols="30"
+            rows="10"
+            placeholder="Įveskite komentarą čia..."
+          ></textarea>
+        </div>
+        <br />
+        <!-- Submit button -->
+        <div>
+          <input type="submit" value="Siųsti" />
+        </div>
+      </form>
+    </div>
+
+    <br />
+    <br />
+    <hr />
+
+    <!-- LENTELES -->
+    <div>
+      <table border>
+        <!-- Table head -->
+        <thead>
+          <th>Nr.</th>
+          <th>Pavadinimas</th>
+          <th>Šalis</th>
+          <th>Buvau/Nebuvau</th>
+          <th>Paveiksliukas</th>
+          <th>Nuoroda</th>
+        </thead>
+
+        <!-- Table body -->
+        <tbody>
+          <tr>
+            <td align="center">1</td>
+            <td>New York</td>
+            <td rowspan="2">
+              Jungtinės<br />
+              Amerikos<br />
+              Valstijos
+            </td>
+            <td>Buvau</td>
+            <td>
+              <img
+                src="./images/Center_New_York_City_dllu.jpg"
+                alt="New York"
+                width="150"
+                height="auto"
+              />
+            </td>
+            <td><a target="_blank" href="https://en.wikipedia.org/wiki/New_York_City">Info</a></td>
+          </tr>
+          <tr>
+            <td align="center">2</td>
+            <td>Grand Canyon</td>
+            <!-- <td>JAV</td> -->
+            <td>Nebuvau</td>
+            <td>
+              <img
+                src="./images/Canyon_River_Tree_(165872763).jpeg"
+                alt="Grand Canyon"
+                width="150"
+                height="auto"
+              />
+            </td>
+            <td><a target="_blank" href="https://en.wikipedia.org/wiki/Grand_Canyon">Info</a></td>
+          </tr>
+          <tr>
+            <td align="center">3</td>
+            <td>Trondheim</td>
+            <td>Norvegija</td>
+            <td>Buvau</td>
+            <td>
+              <img
+                src="./images/Nidelva_utløp_Trondheim.jpg"
+                alt="Trondheim"
+                width="150"
+                height="auto"
+              />
+            </td>
+            <td><a target="_blank" href="https://en.wikipedia.org/wiki/Trondheim">Info</a></td>
+          </tr>
+          <tr>
+            <td align="center">4</td>
+            <td>Barcelona</td>
+            <td>Ispanija</td>
+            <td rowspan="2">Nebuvau</td>
+            <td>
+              <img
+                src="./images/Evening_light_over_Barcelona.jpg"
+                alt="Barcelona"
+                width="150"
+                height="auto"
+              />
+            </td>
+            <td><a target="_blank" href="https://en.wikipedia.org/wiki/Barcelona">Info</a></td>
+          </tr>
+          <tr>
+            <td align="center">5</td>
+            <td>Porto</td>
+            <td>Portugalija</td>
+            <!-- <td>Nebuvau</td> -->
+            <td>
+              <img
+                src="./images/Historical_part_of_Porto,_Portugal.jpg"
+                alt="Porto"
+                width="150"
+                height="auto"
+              />
+            </td>
+            <td><a target="_blank" href="https://en.wikipedia.org/wiki/Porto">Info</a></td>
+          </tr>
+        </tbody>
+
+        <!-- Table foot -->
+        <tfoot>
+          <tr>
+            <th>Vietų kiekis:</th>
+            <td colspan="5">5</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+
+    <script>
+      document.querySelector("#formosUzduotis").addEventListener("submit", (event) => {
+        event.preventDefault();
+        console.log(event);
+      });
+    </script>
+  </body>
+</html>

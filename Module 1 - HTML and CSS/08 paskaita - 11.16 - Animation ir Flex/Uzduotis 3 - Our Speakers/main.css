@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background-color: #383838;
+  color: #dadada;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+/* Card */
+
+.card {
+  width: 705px;
+  height: 365px;
+  background-color: #fff;
+  /* border: 2px solid purple; */
+  padding: 12px;
+}
+.content-wrap {
+  background-color: #00253f;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+/* Aside */
+.card-aside {
+  flex: 2;
+  padding-inline: 32px;
+}
+.card-aside h1 {
+  font-size: 35px;
+  line-height: 1.5;
+  margin-block: 50px 10px;
+  color: #83d4bb;
+}
+.card-aside p {
+  font-size: 12px;
+  font-weight: lighter;
+}
+/* Main */
+.card-main {
+  display: flex;
+  flex: 3;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Speaker profile */
+.speaker-profile {
+  width: 140px;
+  font-size: 10px;
+}
+.speaker-pic {
+  width: 100%;
+  height: 290px;
+}
+.speaker-pic img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+.speaker-description {
+  margin-block: 5px 0;
+  padding-inline: 6px 0;
+}
+.speaker-job,
+.speaker-workPlace {
+  font-weight: lighter;
+}

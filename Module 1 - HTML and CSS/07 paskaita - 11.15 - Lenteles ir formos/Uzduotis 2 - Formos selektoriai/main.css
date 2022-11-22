@@ -1,0 +1,82 @@
+* {
+  padding: 0;
+  box-sizing: border-box;
+  /* border: 1px solid red; */
+  text-align: center;
+}
+
+body {
+  color: #fff;
+  background-color: #000;
+  height: 100vh;
+}
+
+.form-wrapper {
+  background-color: #2f4f4f;
+  max-width: 600px;
+  margin: 10px auto;
+  padding-block: 20px;
+}
+
+/* Layout */
+label,
+input {
+  display: block;
+  margin: 10px auto;
+}
+
+/* Additional */
+.bg-purple {
+  background-color: rgb(252, 142, 252);
+}
+.font-smaller {
+  font-size: smaller;
+}
+
+/* Form elements */
+:is(input, textarea):focus-visible {
+  outline: none;
+}
+
+input:in-range {
+  border: solid green;
+}
+input:invalid {
+  border: 2px solid red;
+}
+input:required {
+  border-left: 5px solid purple;
+}
+input:read-only {
+  background-color: grey;
+}
+
+input:out-of-range {
+  border: 2px solid red;
+}
+textarea:optional {
+  border: 2px solid yellow;
+}
+.checkbox_terms > * {
+  display: inline;
+  margin-inline: 2px;
+}
+.checkbox_terms input:checked + label {
+  color: rgb(172, 172, 219);
+}
+.checkbox_terms input:checked {
+  border: none;
+}
+
+/*Button*/
+.btn-register button {
+  width: 100px;
+  height: 25px;
+  background-color: green;
+  color: white;
+  border: 2px solid black;
+  margin-block: 20px;
+}
+.btn-register button:hover {
+  background-color: rgb(2, 77, 2);
+}

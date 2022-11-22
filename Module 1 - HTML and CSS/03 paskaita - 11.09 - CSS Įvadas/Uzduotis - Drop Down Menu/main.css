@@ -1,0 +1,46 @@
+body {
+  height: 100vh;
+}
+.cities-menu {
+  width: 400px;
+  height: 30px;
+  overflow: hidden;
+  list-style-type: none;
+  padding: 0;
+}
+.cities-menu:hover {
+  overflow: visible;
+}
+.option {
+  width: 400px;
+  height: 30px;
+  background: #99d5ff;
+  border: 1px solid white;
+  color: #041029;
+}
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: #041029;
+}
+.heading {
+  font-size: 20px;
+  font-weight: bold;
+}
+.text-center {
+  line-height: 30px;
+  text-align: center;
+}
+.relative {
+  position: relative;
+}
+.z-index-5 {
+  z-index: 5;
+}
+.center {
+  margin: 0 auto;
+}
+.article {
+  width: 400px;
+}

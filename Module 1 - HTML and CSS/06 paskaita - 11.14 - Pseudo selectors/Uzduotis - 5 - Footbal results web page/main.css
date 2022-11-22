@@ -1,0 +1,119 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #202739;
+}
+.wrapper {
+  width: 80%;
+  margin-inline: auto;
+}
+:is(header, main, figure) > * {
+  width: fit-content;
+  margin-inline: auto;
+}
+
+.wrapper > * {
+  margin-block: 30px;
+  padding-block: 10px;
+}
+main > * {
+  margin-top: 30px;
+}
+.hero figcaption {
+  margin-top: 10px;
+}
+
+/* Header */
+header > h1 {
+  font-size: 45px;
+  font-weight: 600;
+  color: #4ec2fa;
+}
+header > h1 span {
+  color: #fff843;
+}
+
+/* MAIN */
+
+.hero figcaption {
+  color: #ff677c;
+}
+.hero figure {
+  width: 600px;
+  padding: 10px;
+}
+.hero img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;
+}
+
+/* Table */
+table {
+  border-collapse: collapse;
+}
+td,
+th {
+  color: #a6a0ad;
+  border: 2px solid #202739;
+  padding: 10px;
+}
+td:first-child {
+  color: #ff677c;
+}
+tr:nth-child(2n + 1):not(thead > tr) {
+  background-color: #323c50;
+}
+tr:nth-child(2n) {
+  background-color: #2d3447;
+}
+td:nth-child(2) {
+  min-width: 200px;
+}
+td:last-child {
+  padding-inline: 30px;
+}
+
+/* Forma */
+td span {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  color: #fff;
+  background-color: #14dc4c;
+  line-height: 30px;
+  margin-inline: 3px;
+  border-radius: 5px;
+}
+.yellow-box {
+  background-color: #ffcd00;
+}
+.red-box {
+  background-color: #dd0000;
+}
+
+/* HOVER */
+/* cell */
+td:hover,
+th:hover {
+  background-color: #3d195b;
+  color: #fff;
+}
+/* row */
+tr:nth-child(n):hover {
+  background-color: #7c648f;
+  color: #000;
+}
+/* column */
+table {
+  overflow: hidden;
+}
+td {
+  position: relative;
+}

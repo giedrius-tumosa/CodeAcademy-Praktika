@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: rgb(228, 228, 228);
+  font-family: sans-serif;
+}
+
+.container {
+  padding: 20px 30px;
+  width: 60%;
+  margin: 50px auto;
+  background: #fff;
+}
+.container > h1 {
+  margin-bottom: 20px;
+}
+
+form * {
+  margin-block: 15px;
+}
+label,
+input,
+textarea {
+  display: block;
+  width: 100%;
+}
+.fullName,
+.email {
+  display: inline-block;
+  width: 48%;
+}
+input,
+textarea {
+  border: none;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.548);
+  padding: 10px 0;
+}
+:is(input, textarea):focus-visible {
+  outline: none;
+}
+label {
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.message {
+  margin-top: 30px;
+}
+.fullName {
+  margin-right: 20px;
+}
+textarea::placeholder {
+  font-family: sans-serif;
+}

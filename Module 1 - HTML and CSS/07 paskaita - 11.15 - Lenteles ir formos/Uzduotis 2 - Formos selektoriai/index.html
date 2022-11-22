@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form selectors-Ex2</title>
+    <link rel="stylesheet" href="main.css" />
+  </head>
+  <body>
+    <div class="form-wrapper">
+      <h1>Register to Fancy Form</h1>
+      <p>All fields are <span class="bg-purple">required</span> unless marked as "optional".</p>
+      <form action="#">
+        <div class="unique-id">
+          <label for="unique-id">Your unique ID that you can't change</label>
+          <input name="unique-id" id="unique-id" type="text" value="0123456789" readonly />
+        </div>
+        <div class="email">
+          <label for="email">Email:</label>
+          <input name="email" id="email" type="email" required />
+        </div>
+        <div class="password">
+          <label for="password">Password:</label>
+          <input name="password" id="password" type="password" required />
+        </div>
+        <div class="age">
+          <label for="age">Age:</label>
+          <input name="age" id="age" type="number" min="18" max="65" required />
+        </div>
+        <div class="message">
+          <label for="message"
+            >Tell us a little about yourself <span class="font-smaller">(optional)</span></label
+          >
+          <textarea name="message" id="message" cols="30" rows="5" optional></textarea>
+        </div>
+        <div class="checkbox_terms">
+          <input name="checkbox_terms" id="checkbox_terms" type="checkbox" required />
+          <label for="checkbox_terms">I agree with Terms and Conditions</label>
+        </div>
+        <div class="btn-register">
+          <button type="submit">Register</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

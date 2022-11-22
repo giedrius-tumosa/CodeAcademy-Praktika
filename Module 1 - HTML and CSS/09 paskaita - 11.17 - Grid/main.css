@@ -1,0 +1,15 @@
+.grid-container > * {
+  border: 1px solid black;
+  /* width: 100px;
+  height: 100px; */
+  background-color: blueviolet;
+  color: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 150px 200px 250px;
+}

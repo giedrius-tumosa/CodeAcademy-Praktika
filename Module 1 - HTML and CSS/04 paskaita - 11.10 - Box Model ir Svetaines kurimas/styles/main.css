@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+.logo,
+.main-menu {
+  display: inline-block;
+}
+header {
+  height: 80px;
+  background-color: rgb(8, 131, 8);
+  padding-inline: 1rem;
+  position: sticky;
+  top: 0;
+}
+.logo img {
+  height: 80px;
+  width: auto;
+  display: block;
+  border-radius: 50%;
+}
+.main-menu ul {
+  list-style-type: none;
+  line-height: 80px;
+}
+.main-menu > ul > li {
+  display: inline-block;
+  margin: 0 10px;
+}
+.main-menu {
+  float: right;
+}
+.link {
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+}
+main {
+  padding-block: 2rem;
+}
+h3 {
+  scroll-margin-top: 81px;
+}
