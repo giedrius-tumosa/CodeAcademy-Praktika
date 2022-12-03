@@ -1,0 +1,10 @@
+.hidden {
+  height: 80px;
+  width: 80px;
+  background-color: orange;
+  border: 2px solid black;
+  position: fixed;
+  right: 10px;
+  top: 50vh;
+  display: none;
+}

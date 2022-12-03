@@ -124,22 +124,26 @@ console.groupEnd();
 console.groupCollapsed("//10");
 
 function calc(num1, num2, operator) {
-  switch (operator) {
-    case 'sum':
-      console.log("sum => ", num1 + num2);
-      break;
-    case 'sub':
-      console.log("sub => ", num1 - num2);
-      break;
-    case 'div':
-      console.log("div => ", num1 / num2);
-      break;
-    case 'multi':
-      console.log("sum => ", num1 * num2);
-      break;
-    default:
-      console.log("Operator was not recognized. Available: sum, sub, div, multi.");
-      break;
+  if (typeof (num1) !== "number" || typeof (num2) !== "number" || typeof (operator) !== "string") {
+    return "Error: invalid entry.";
+  } else {
+    switch (operator) {
+      case 'sum':
+        console.log("sum => ", num1 + num2);
+        break;
+      case 'sub':
+        console.log("sub => ", num1 - num2);
+        break;
+      case 'div':
+        console.log("div => ", num1 / num2);
+        break;
+      case 'multi':
+        console.log("sum => ", num1 * num2);
+        break;
+      default:
+        console.log("Operator was not recognized. Available: sum, sub, div, multi.");
+        break;
+    }
   }
 }
 
@@ -154,13 +158,13 @@ console.groupCollapsed("//11");
 
 function randomNum() {
   let rand = Math.ceil(Math.random() * 10);
-  console.log("Random number is: ", rand);
   return rand;
 }
 
 function powerOfTwo(number) {
   return number ** 2;
 }
+
 
 console.log(powerOfTwo(randomNum()));
 
@@ -241,3 +245,4 @@ function primaryNums(numStart, numEnd) {
 primaryNums(-5, 5);
 
 console.groupEnd();
+

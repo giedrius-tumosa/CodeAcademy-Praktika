@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="main.css">
+  <title>Calculator</title>
+  <script defer src="./main.js"></script>
+</head>
+
+<body>
+
+  <div class="calc_box">
+    <!-- Form -->
+    <section class="form_box">
+      <form action="">
+        <!-- Number 1 -->
+        <div class="number1 flex-col">
+          <label for="number1">Pirmas skaičius:</label>
+          <input type="text" id="number1" name="number1" placeholder="0" autocomplete="off">
+        </div>
+
+        <!-- Operators -->
+        <div class="operators">
+          <input type="radio" id="addition" class="addition" name="operator">
+          <label for="addition">+</label>
+
+          <input type="radio" id="subtraction" class="subtraction" name="operator">
+          <label for="subtraction">-</label>
+
+          <input type="radio" id="division" class="division" name="operator">
+          <label for="division">/</label>
+
+          <input type="radio" id="multiplication" class="multiplication" name="operator">
+          <label for="multiplication">*</label>
+
+        </div>
+
+        <!-- Number 2 -->
+        <div class="number2 flex-col">
+          <label for="number2">Antras skaičius:</label>
+          <input type="text" id="number2" name="number2" placeholder="0" autocomplete="off">
+        </div>
+
+        <!-- Calculate -->
+        <div class="buttons_box flex-col">
+          <button class="btn-submit" type="submit">Skaičiuoti</button>
+          <button class="btn-reset" type="reset">Išvalyti</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Output -->
+    <section class="output_section">
+      <h4>Atsakymas:</h4>
+      <p class="output_display"></p>
+    </section>
+
+  </div>
+
+</body>
+
+</html>
