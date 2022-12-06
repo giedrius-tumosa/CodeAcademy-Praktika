@@ -1,0 +1,69 @@
+/* // 1) Naudodamiesi data[0] duomeninis atlikite šiuos veiksmus: */
+
+.section-style {
+  background-color: #d5f0ff;
+  padding: 1rem;
+}
+.grid-1 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  justify-items: center;
+}
+.grid-col-span2 {
+  grid-column: span 2;
+}
+.heading-1 {
+  text-transform: uppercase;
+  text-decoration: underline;
+  line-height: 1.5;
+  margin-bottom: 0;
+  text-align: center;
+}
+.img1 {
+  width: 50%;
+}
+
+/* 2) Naudodamiesi data[1] duomenimis atlikite šiuos veiksmus: */
+.section-style2 {
+  background-color: #d1c171;
+  padding: 1rem;
+}
+.img-heading {
+  background: linear-gradient(to right, #fff, #ffff7f, #74f874, #f69595, #fff);
+  padding: 0.5rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+.flex-col {
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 1rem;
+}
+
+/* 4 - 5 uzduotys */
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+.bubbles-fizz {
+  background-color: #f69595;
+}
+.bubbles-buzz {
+  background-color: #eaf36b;
+}
+.bubbles-fizzBuzz {
+  background: linear-gradient(to right, #f69595, #eaf36b);
+}
+.bubbles {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  border: 1px solid red;
+}
