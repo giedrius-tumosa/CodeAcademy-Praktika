@@ -1,0 +1,26 @@
+section {
+  margin-bottom: 2rem;
+  border: 1px solid grey;
+  padding: 0.5rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+form {
+  display: flex;
+  gap: 1rem;
+}
+
+form > * > * {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+.answer_box {
+  border: 1px solid grey;
+  flex: 1;
+  min-height: 50px;
+  padding: 0.5rem;
+  display: grid;
+  place-content: center;
+}
