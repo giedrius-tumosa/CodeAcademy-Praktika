@@ -1,0 +1,18 @@
+td,
+th {
+  border: 1px solid black;
+  width: 50px;
+  height: 20px;
+}
+table {
+  /* border-collapse: collapse; */
+}
+#tableArea {
+  margin-top: 3rem;
+}
+
+#tableGenerator {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 2rem;
+}
