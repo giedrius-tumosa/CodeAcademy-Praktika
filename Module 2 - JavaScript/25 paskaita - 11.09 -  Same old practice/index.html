@@ -16,15 +16,15 @@
       <form action="">
         <div>
           <label for="photo">Nuotrauka</label>
-          <input type="file" accept=".jpg, .jpeg, .png" name="photo" id="photo" required>
+          <input required type="url" name="photo" id="photo">
         </div>
         <div>
           <label for="title">Pavadinimas</label>
-          <input type="text" name="title" id="title" required>
+          <input required type="text" name="title" id="title">
         </div>
         <div>
           <label for="description">Aprašymas</label>
-          <textarea name="description" id="description" required maxlength="200"></textarea>
+          <textarea required name="description" id="description" maxlength="200"></textarea>
         </div>
         <div>
           <label for="date">Data</label>
@@ -35,23 +35,43 @@
           <input type="text" name="location" id="location">
         </div>
         <input type="submit" value="Generuoti">
+        <div class="templates">
+          <h3>Pakeisti išvaizdą:</h3>
+          <div>
+            <input type="checkbox" id="landscape" name="landscape">
+            <label for="landscape">Horizontali kortelė</label>
+          </div>
+          <div>
+            <input type="radio" id="theme1" name="themes">
+            <label for="theme1">Theme 1</label>
+          </div>
+          <div>
+            <input type="radio" id="theme2" name="themes">
+            <label for="theme2">Theme 2</label>
+          </div>
+        </div>
+
       </form>
     </section>
 
     <section id="generatedCards">
-      <div class="card_generated">
-        <img src="./images/kenya_tour.jpg" alt="User image." width="400" height="auto">
-        <h2>Pavadinimas</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat consequatur tenetur laborum distinctio optio
-          eum deleniti, dicta quae similique rem.</p>
-        <div class="other_info">
-          <p>2022-12-09</p>
-          <p>Location</p>
-        </div>
-      </div>
-
+      <!-- <div class="card_generated">
+        <figure><img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTzthjkTb0NxS_V9NPQfGANOVwcybvcxkFhMA&usqp=CAU"
+            alt="User image." width="400" height="auto"></figure>
+        <div class="card_text">
+          <h2>${title}</h2>
+          <p>${description}</p>
+          <div class="other_info">
+            ${date && `<p>${date}</p>`}
+            ${location && `<p>${location}</p>`}
+          </div>
+        </div> -->
     </section>
   </main>
 </body>
+<!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis molestiae hic quo quae aspernatur explicabo deleniti dolores quibusdam fugit asperiores. -->
+
+
 
 </html>
