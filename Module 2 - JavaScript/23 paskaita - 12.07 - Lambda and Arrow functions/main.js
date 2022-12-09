@@ -310,7 +310,6 @@ console.groupCollapsed("22");
 
 let lamda22 = (array, minNum, maxNum, oddOrEven) => {
   let newArray = [];
-  let temporary = [];
 
   array.forEach(el => {
     if (typeof (el) === "number" && el <= maxNum && el >= minNum) {
@@ -332,29 +331,8 @@ let lamda22 = (array, minNum, maxNum, oddOrEven) => {
     }
   });
   return newArray;
-
-  // switch (oddOrEven) {
-  //   case "even":
-  //     temporary.forEach(el => {
-  //       if (el % 2 === 0) {
-  //         newArray.push(el);
-  //       }
-  //     });
-  //     break;
-  //   case "odd":
-  //     temporary.forEach(el => {
-  //       if (el % 2 !== 0) {
-  //         newArray.push(el);
-  //       }
-  //     });
-  //     break;
-  //   default:
-  //     return "ERROR: wrong 3rd parameter.";
-  // }
-
-
-
 };
+
 console.log(lamda22(["vienas", "du", "Trys", 4, 5, true, 7, false, 100, 1], 5, 10, "odd"));
 
 console.groupEnd();

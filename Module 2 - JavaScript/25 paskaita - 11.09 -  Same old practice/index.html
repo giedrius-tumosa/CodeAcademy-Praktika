@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Paskaita 25</title>
+  <script src="./main.js" defer></script>
+  <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+  <main>
+    <section id="card">
+      <form action="">
+        <div>
+          <label for="photo">Nuotrauka</label>
+          <input type="file" accept=".jpg, .jpeg, .png" name="photo" id="photo" required>
+        </div>
+        <div>
+          <label for="title">Pavadinimas</label>
+          <input type="text" name="title" id="title" required>
+        </div>
+        <div>
+          <label for="description">Aprašymas</label>
+          <textarea name="description" id="description" required maxlength="200"></textarea>
+        </div>
+        <div>
+          <label for="date">Data</label>
+          <input type="date" name="date" id="date">
+        </div>
+        <div>
+          <label for="location">Lokacija</label>
+          <input type="text" name="location" id="location">
+        </div>
+        <input type="submit" value="Generuoti">
+      </form>
+    </section>
+
+    <section id="generatedCards">
+      <div class="card_generated">
+        <img src="./images/kenya_tour.jpg" alt="User image." width="400" height="auto">
+        <h2>Pavadinimas</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat consequatur tenetur laborum distinctio optio
+          eum deleniti, dicta quae similique rem.</p>
+        <div class="other_info">
+          <p>2022-12-09</p>
+          <p>Location</p>
+        </div>
+      </div>
+
+    </section>
+  </main>
+</body>
+
+</html>
