@@ -52,7 +52,8 @@ let addMovies = (movieData) => {
   });
 };
 
-addMovies(data.movies);
+// Generates all cards when page is loaded
+// addMovies(data.movies);
 
 
 
@@ -73,24 +74,31 @@ ${addFilterOptions()}
   </select>
   <input type="text" id="search_criteria" name="search_criteria" />
   <button type="submit" id="btn-filter">Filter</button>
+  <button type="button" id="btn-generate">Generate</button>
 </form>
 `;
 
+let btnGenerate = document.querySelector(".btn-generate");
 let filterOptions = document.querySelector("#filterSelection");
 let btnFilter = document.querySelector("#btn-filter");
-
 let filterForm = document.querySelector(".form_movie_filter");
 
+
+// Filter
 filterForm.addEventListener("submit", function (e) {
   e.preventDefault();
-  let searchResult = [];
+
+  // Reset main innerHTML
   main.innerHTML = "";
+
+  // Variables
+  let searchResult = [];
   let [selectedFilter, searchCriteria] = [
     e.target.elements.filterSelection.value,
-    e.target.elements.search_criteria.value.toLowerCase()
+    e.target.elements.search_criteria.value.toLowerCase().trim()
   ];
 
-
+  // Filter logic
   if (!searchCriteria) {
     addMovies(data.movies);
   } else {
@@ -106,19 +114,17 @@ filterForm.addEventListener("submit", function (e) {
       case 'Actor':
         searchResult = data.movies
           .filter(el => el.aktoriai
-            .map(el => el.split(" "))
-            .flat().map(el => el.toLowerCase())
+            .map(el => el.toLowerCase())
             .includes(searchCriteria));
         break;
       case 'Director':
         searchResult = data.movies
-          .filter(el => el.rezisierius.toLowerCase().split(" ")
-            .includes(searchCriteria));
+          .filter(el => el.rezisierius.toLowerCase() === searchCriteria
+          );
         break;
       case 'Title':
         searchResult = data.movies
-          .filter(el => el.pavadinimas.toLowerCase().split(" ")
-            .includes(searchCriteria));
+          .filter(el => el.pavadinimas.toLowerCase() === searchCriteria);
         break;
       case 'Released before year':
         searchResult = data.movies
@@ -131,8 +137,7 @@ filterForm.addEventListener("submit", function (e) {
       case 'Type':
         searchResult = data.movies
           .filter(el => el.tipas
-            .map(el => el.split(" "))
-            .flat().map(el => el.toLowerCase())
+            .map(el => el.toLowerCase())
             .includes(searchCriteria));
         break;
       default:
@@ -140,18 +145,12 @@ filterForm.addEventListener("submit", function (e) {
         break;
     }
 
-    searchResult.length ? addMovies(searchResult) : main.innerHTML = `Sorry, we didn't find any movies matching your search input.`;
-
+    // Display filtered cards
+    searchResult.length
+      ? addMovies(searchResult)
+      : main.innerHTML = `Sorry, we didn't find any movies matching your search input.`;
 
   }
 
 
-})
-
-
-
-
-
-
-
-
+});

@@ -1,0 +1,21 @@
+#saskaita > div {
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid grey;
+  padding: 1rem;
+}
+
+#saskaita {
+  margin-top: 2rem;
+}
+
+.kiekisKaina {
+  display: flex;
+  gap: 2rem;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
