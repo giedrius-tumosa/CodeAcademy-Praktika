@@ -1,6 +1,10 @@
 const formSec = document.querySelector("#forma");
-
 let form = document.createElement("form");
+const saskaita = document.querySelector("#saskaita");
+const mygtukuDiv = document.createElement("div");
+
+mygtukuDiv.classList.add("buttonDiv");
+form.append(mygtukuDiv);
 
 
 let patiekaloSelektoSukurimas = (kelintas) => {
@@ -29,6 +33,7 @@ let patiekaloSelektoSukurimas = (kelintas) => {
   form.append(div);
 };
 
+
 let addMoreMygtukoSukurimas = () => {
   let div = document.createElement("div");
   div.classList.add("addMoreDiv");
@@ -36,7 +41,7 @@ let addMoreMygtukoSukurimas = () => {
   input.setAttribute("type", "button");
   input.setAttribute("value", "+");
   div.append(input);
-  form.append(div);
+  mygtukuDiv.append(div);
 };
 
 let mygtukoSukurimas = () => {
@@ -46,16 +51,17 @@ let mygtukoSukurimas = () => {
   input.setAttribute("type", "submit");
   input.setAttribute("value", "Užsisakyti");
   div.append(input);
-  form.append(div);
+  mygtukuDiv.append(div);
+
 };
 
 addMoreMygtukoSukurimas();
+mygtukoSukurimas();
 let addMoreDiv;
 setTimeout(
   () => {
     addMoreDiv = document.querySelector(".addMoreDiv");
     patiekaloSelektoSukurimas(document.querySelectorAll(".patiekaloSelect").length);
-    mygtukoSukurimas();
   }, 100
 );
 
@@ -65,15 +71,12 @@ formSec.append(form);
 // Saskaita
 let gautiDabartiniLaika = () => {
   let date = new Date().toLocaleString("lt-LT");
-  // let date = new Date().toISOString();
-  // date = date.replace("T", " ");
-  // date = date.slice(0, date.indexOf(" ") + 1);
   return date;
 };
 
-const saskaita = document.querySelector("#saskaita");
 
-let saskaitosSukurimas = (preke) => {
+
+let saskaitosSukurimas = (prekes) => {
 
   let mainDiv = document.createElement("div");
   let p1 = document.createElement("p");
@@ -83,7 +86,7 @@ let saskaitosSukurimas = (preke) => {
   mainDiv.append(p1);
 
   let h4 = document.createElement("h4");
-  text = document.createTextNode("Įmonės pavadinimas");
+  text = document.createTextNode(`"Kebabų Rojus", UAB`);
   h4.append(text);
   mainDiv.append(h4);
 
@@ -100,28 +103,30 @@ let saskaitosSukurimas = (preke) => {
 
 
   //ul start
-  let li = document.createElement("li");
-  let div = document.createElement("div");
-  let p = document.createElement("p");
-  text = document.createTextNode(`${preke.pavadinimas}:`);
-  p.append(text);
-  div.append(p);
-  let div2 = document.createElement('div');
-  div2.classList.add("kiekisKaina");
-  let span = document.createElement('span');
-  text = document.createTextNode(`kiekis: ${preke.kiekis}`);
-  span.append(text);
-  div2.append(span);
-  span = document.createElement('span');
-  text = document.createTextNode(`${preke.kaina * preke.kiekis} Eur`);
-  span.append(text);
-  div2.append(span);
-  li.append(div);
-  li.append(div2);
+  let bendraKaina = 0;
 
-  ul.append(li);
-
-
+  prekes.forEach((preke, i) => {
+    bendraKaina += preke.kaina * preke.kiekis;
+    let li = document.createElement("li");
+    let div = document.createElement("div");
+    let p = document.createElement("p");
+    text = document.createTextNode(`${i + 1}) ${preke.pavadinimas}`);
+    p.append(text);
+    div.append(p);
+    let div2 = document.createElement('div');
+    div2.classList.add("kiekisKaina");
+    let span = document.createElement('span');
+    text = document.createTextNode(`${preke.kiekis} vnt.`);
+    span.append(text);
+    div2.append(span);
+    span = document.createElement('span');
+    text = document.createTextNode(`${preke.kaina * preke.kiekis} Eur`);
+    span.append(text);
+    div2.append(span);
+    li.append(div);
+    li.append(div2);
+    ul.append(li);
+  });
 
   // ul end
 
@@ -130,7 +135,7 @@ let saskaitosSukurimas = (preke) => {
 
   p2 = document.createElement("p");
   p2.classList.add("bendraKaina");
-  text = document.createTextNode("bendraKaina");
+  text = document.createTextNode(`Galutinė kaina: ${bendraKaina.toFixed(2)} Eur`);
   p2.append(text);
   mainDiv.append(p2);
 
@@ -138,7 +143,7 @@ let saskaitosSukurimas = (preke) => {
   mainDiv.append(hr3);
 
   let h2 = document.createElement("h2");
-  text = document.createTextNode("Padėkojimas");
+  text = document.createTextNode("Ačiū, kad renkatės mus!");
   h2.append(text);
   mainDiv.append(h2);
 
@@ -151,16 +156,18 @@ document
   .querySelector("#forma > form")
   .addEventListener("submit", function (e) {
     e.preventDefault();
+    let uzsakymuMasyvas = [];
+    for (let i = 2; i < (e.target.elements.length); i += 2) {
+      let [patiekaloID, patiekaloKiekis] = [
+        e.target.elements[i].value,
+        e.target.elements[i + 1].value
+      ];
+      let pateikiamaPreke = menu.find(el => el.id === patiekaloID);
+      pateikiamaPreke.kiekis = patiekaloKiekis;
+      uzsakymuMasyvas.push(pateikiamaPreke);
+    }
 
-    let [patiekaloID, patiekaloKiekis] = [
-      e.target.elements.patiekalas.value,
-      e.target.elements.kiekis.value
-    ];
-    let pateikiamaPreke = menu.find(el => el.id === patiekaloID);
-    pateikiamaPreke.kiekis = patiekaloKiekis;
-
-    saskaitosSukurimas(pateikiamaPreke);
-
+    saskaitosSukurimas(uzsakymuMasyvas);
   });
 
 document
@@ -170,3 +177,29 @@ document
     patiekaloSelektoSukurimas(document.querySelectorAll(".patiekaloSelect").length);
 
   });
+
+
+// Menu
+
+const menuSec = document.querySelector("#menu");
+
+let menuSukurimas = () => {
+  menu.forEach(item => {
+    let [patiekaloKortele, pavadinimas, sudetis, kaina] = [
+      document.createElement("article"),
+      document.createElement("h4"),
+      document.createElement("p"),
+      document.createElement("p")
+    ];
+    patiekaloKortele.append(pavadinimas, sudetis, kaina);
+    let text = document.createTextNode(item.pavadinimas);
+    pavadinimas.append(text);
+    text = document.createTextNode(item.sudetis.join(`, `));
+    sudetis.append(text);
+    text = document.createTextNode(`${item.kaina} Eur`);
+    kaina.append(text);
+    menuSec.append(patiekaloKortele);
+  });
+};
+
+menuSukurimas();
