@@ -7,7 +7,6 @@ const header = new Element(
     tag: `header`,
     text: "TASK MANAGER",
     attributes: { class: "header" },
-    nested: []
   }
 );
 
@@ -40,7 +39,7 @@ const aside = new Element(
                   },
                   {
                     tag: `input`,
-                    attributes: { id: "inputNewTask", name: "inputNewTask", type: "text" },
+                    attributes: { id: "inputNewTask", name: "inputNewTask", type: "text", maxlength: 40 },
                   }
                 ]
               },
@@ -96,7 +95,7 @@ export let createTaskCard = (task) => {
   const taskCard = new Element(
     {
       tag: `div`,
-      attributes: { class: "taskCard" },
+      attributes: { class: `taskCard`, id: `id${task.id}` },
       nested: [
         { //text div
           tag: `div`,
@@ -113,10 +112,25 @@ export let createTaskCard = (task) => {
           tag: `div`,
           attributes: { class: "buttonArea" },
           nested: [
+            { //Mark complete form
+              tag: `form`,
+              attributes: { class: "markCompleteForm" },
+              nested: [
+                {//label
+                  tag: `label`,
+                  text: `Completed`,
+                  attributes: { for: "markComplete" },
+                },
+                {//checkbox
+                  tag: `input`,
+                  attributes: { type: "checkbox", id: "markComplete", name: "markComplete" },
+                }
+              ]
+            },
             { //edit button
               tag: `button`,
               text: `Edit`,
-              attributes: { type: "button", class: "btnEditTask" },
+              attributes: { type: "button", class: "btnEditTask", value: task.id },
             },
             { //delete button
               tag: `button`,
@@ -128,7 +142,40 @@ export let createTaskCard = (task) => {
       ]
     }
   );
+  taskCard.querySelector("#markComplete").checked = task.isCompleted;
   return taskCard;
+};
+
+export let createTaskTitleForm = () => {
+  return new Element(
+    {
+      tag: `form`,
+      attributes: { id: "titleEditForm" },
+      nested: [
+        {
+          tag: `input`,
+          attributes: { type: "type", id: "inputEditTitle", name: "inputEditTitle" },
+          nested: []
+        },
+        {
+          tag: `button`,
+          text: `Save`,
+          attributes: { type: "submit" },
+        },
+        {
+          tag: `div`,
+          attributes: { id: "btnCancelEdit" },
+          nested: [
+            {
+              tag: `img`,
+              attributes: { src: "./images/remove_FILL0_wght400_GRAD0_opsz48.svg", width: "12", height: "auto" },
+            }
+          ]
+        }
+
+      ]
+    }
+  );
 };
 
 
@@ -138,4 +185,3 @@ export let createTaskCard = (task) => {
 
 
 toDoApp.append(header, aside, main);
-// document.querySelector(".taskDisplay").append(newCard);

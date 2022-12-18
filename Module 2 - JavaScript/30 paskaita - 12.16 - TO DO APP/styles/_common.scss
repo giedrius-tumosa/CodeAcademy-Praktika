@@ -6,11 +6,18 @@
   // border: 1px solid purple;
 }
 
+img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
 // GENERAL
 body {
   min-height: 100vh;
   font-family: "Open Sans", sans-serif;
 }
+
 #toDoApp > * {
   padding: 1rem;
   border: 1px solid grey;
@@ -35,19 +42,66 @@ body {
 // TASK CARD
 .taskCard {
   border: 1px solid purple;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 100%;
   padding: 0.5em;
   max-width: 400px;
+  align-items: center;
+  gap: 1rem;
 
   .buttonArea {
     display: flex;
     gap: 1rem;
+    align-self: flex-start;
+    justify-self: flex-end;
+  }
+  .taskCard_heading {
+    font-weight: 600;
+    font-size: 0.9rem;
+    line-break: anywhere;
+  }
+
+  .markCompleteForm {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    label {
+      font-size: 0.7rem;
+    }
+  }
+}
+
+input {
+  outline: none;
+}
+#titleEditForm {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  align-items: center;
+}
+#btnCancelEdit {
+  border: 1px solid red;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+
+  &:hover {
+    cursor: default;
+    border-color: #383838;
+    background-color: #c7c7c7;
   }
 }
 
 // MEDIA
+
+@media screen and (min-width: 375px) {
+  .taskCard {
+    grid-template-columns: 1fr 190px;
+  }
+}
 
 @media screen and (min-width: 678px) {
   #toDoApp {

@@ -37,7 +37,7 @@ export default class Task {
         }
       }
       counter++;
-      if (counter > 2) {
+      if (counter > 1000) {
         idExists = true;
         console.log("ERROR: cannot choose random id"); //Isvesti vartotojui
       }
