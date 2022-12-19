@@ -14,13 +14,23 @@ img {
 
 // GENERAL
 body {
+  width: 100%;
   min-height: 100vh;
   font-family: "Open Sans", sans-serif;
+  background: url("../../images/pexels-pixabay-33545.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: scroll;
+  padding-inline: 1rem;
 }
 
 #toDoApp > * {
   padding: 1rem;
-  border: 1px solid grey;
+}
+#toDoApp {
+  max-width: 1000px;
+  margin: 0 auto;
+  height: calc(100vh - 100px);
 }
 .controlPanel,
 #formTasks,
@@ -33,32 +43,61 @@ body {
 
 .header {
   font-size: 2rem;
+  background-color: #0000008d;
+  color: whitesmoke;
+}
+.main {
+  background-color: #0000008d;
+  overflow-y: scroll;
+  padding-bottom: 5px;
+}
+.aside {
+  background-color: #f5f5f57c;
+}
+.taskDisplay p {
+  color: whitesmoke;
 }
 
 .errorOutput {
-  color: #ff0000;
+  color: #8a0000;
 }
 
 // TASK CARD
 .taskCard {
-  border: 1px solid purple;
+  box-shadow: 0px 2px 3px #323232d2;
+  border: 1px solid #bebebe5e;
+  border-radius: 5px;
   display: grid;
   grid-template-columns: 100%;
   padding: 0.5em;
-  max-width: 400px;
+  width: 100%;
   align-items: center;
   gap: 1rem;
+  background-color: whitesmoke;
 
   .buttonArea {
     display: flex;
     gap: 1rem;
     align-self: flex-start;
     justify-self: flex-end;
+    box-sizing: content-box;
+    button {
+      border: none;
+      background-color: whitesmoke;
+      border: 1px solid whitesmoke;
+      &:hover {
+        border: 1px solid rgb(168, 168, 168);
+      }
+    }
+    img {
+      width: 15px;
+      height: 15px;
+    }
   }
   .taskCard_heading {
     font-weight: 600;
     font-size: 0.9rem;
-    line-break: anywhere;
+    word-break: break-word;
   }
 
   .markCompleteForm {
@@ -71,14 +110,18 @@ body {
   }
 }
 
+.taskManagement h2 {
+  color: whitesmoke;
+}
+
 input {
   outline: none;
 }
 #titleEditForm {
   display: flex;
   gap: 0.5rem;
-  margin-top: 1rem;
   align-items: center;
+  grid-column: 1 / -1;
 }
 #btnCancelEdit {
   border: 1px solid red;
@@ -95,6 +138,13 @@ input {
   }
 }
 
+.background-pink {
+  background-color: #fcd2d2;
+}
+.text-stroked {
+  text-decoration: line-through;
+}
+
 // MEDIA
 
 @media screen and (min-width: 375px) {
@@ -104,20 +154,27 @@ input {
 }
 
 @media screen and (min-width: 678px) {
+  body {
+    padding-top: 3rem;
+  }
   #toDoApp {
     display: grid;
     grid-template-columns: 320px 1fr;
     grid-template-rows: 80px 1fr;
-    min-height: 100vh;
+    height: calc(100vh - 100px);
   }
 
   .header {
     grid-column: 1 / -1;
+    border-radius: 10px 10px 0px 0px;
   }
   .aside {
     grid-column: 1 / 2;
+    border-end-start-radius: 10px;
   }
   .main {
     grid-column: 2 / 3;
+
+    border-end-end-radius: 10px;
   }
 }

@@ -19,7 +19,6 @@ let btnDeleteEvent = (btn) => {
   });
 };
 
-
 // Funkcija keisti local storage data
 //Sukurti naujai atsiradusiai formai isjungimo mygtuka, jei nebenorima editint.
 
@@ -39,40 +38,40 @@ let btnSaveChangesEvent = (titleEditForm) => {
       e.target.elements.inputEditTitle.value,
       titleEditForm.closest(".taskCard").id.slice(2)
     ];
-    // If prevents empty string
+    // If prevents empty string to be added to data
     if (newTitle) {
       editStorageData(taskID, "title", newTitle);
+      displayStorage();
     }
-    displayStorage();
+
   });
 };
 
+// Cancel edit
 let btnCancelEdit = (btn) => {
   btn.addEventListener("click", function (e) {
     btn.parentNode.remove();
   });
 };
 
-
 // Edit event: creates edit task title form
 let btnEditEvent = (btn) => {
   btn.addEventListener("click", function (e) {
     e.preventDefault();
     const taskCard = btn.closest(".taskCard");
-    const textArea = taskCard.querySelector(".textArea");
-    // Prevent editing if task is complete
 
+    // Prevent editing if task is complete
     if (taskCard.querySelector("#markComplete").checked) {
       return;
     }
 
     // Reset
-    textArea.childNodes.forEach(el => {
-      if (el.id === "titleEditForm") textArea.removeChild(el);
+    taskCard.childNodes.forEach(el => {
+      if (el.id === "titleEditForm") taskCard.removeChild(el);
     });
 
     const taskTitleForm = createTaskTitleForm();
-    textArea.append(taskTitleForm);
+    taskCard.append(taskTitleForm);
     btnSaveChangesEvent(taskTitleForm);
 
     taskTitleForm.childNodes.forEach(el => {
@@ -80,8 +79,6 @@ let btnEditEvent = (btn) => {
         btnCancelEdit(el);
       }
     });
-
-
   });
 };
 
@@ -91,22 +88,18 @@ let markCompleteEvent = (btn) => {
   btn.addEventListener("change", function (e) {
     e.preventDefault();
     const taskCard = btn.closest(".taskCard");
-    const taskHeading = taskCard.querySelector(".taskCard_heading");
     const taskID = taskCard.id.slice(2);
     if (btn.checked) {
       editStorageData(taskID, "isCompleted", true);
-      taskHeading.style.textDecoration = "line-through";
     } else {
       editStorageData(taskID, "isCompleted", false);
-      taskHeading.style.textDecoration = "none";
     }
+    displayStorage();
   });
 };
 
 
 
-
-// FUNCTIONS
 
 // Function to display contents of local storage
 let displayStorage = () => {
@@ -126,7 +119,7 @@ let displayStorage = () => {
       taskDisplay.append(newCard);
     }
   }
-  // need to assign delete event to all delete buttons
+  // need to assign event to all buttons
   const delButtons = document.querySelectorAll(".btnDeleteTask");
   delButtons.forEach(btn => {
     btnDeleteEvent(btn);
@@ -148,7 +141,7 @@ displayStorage();
 // Event listeners
 formTasks.addEventListener("submit", function (e) {
   e.preventDefault();
-  let taskTitle = e.target.elements.inputNewTask.value;
+  let taskTitle = e.target.elements.inputNewTask.value.trim();
   if (taskTitle !== "") {
     const task = new Task(taskTitle, false);
     displayStorage();

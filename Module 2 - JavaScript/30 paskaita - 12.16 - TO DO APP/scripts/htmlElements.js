@@ -129,20 +129,44 @@ export let createTaskCard = (task) => {
             },
             { //edit button
               tag: `button`,
-              text: `Edit`,
               attributes: { type: "button", class: "btnEditTask", value: task.id },
+              nested: [
+                {
+                  tag: `img`,
+                  attributes: { src: "./images//edit_document_FILL0_wght400_GRAD0_opsz48.svg", width: "20", height: "20" }
+                }
+              ]
+
             },
             { //delete button
               tag: `button`,
-              text: `Del`,
+              // text: `Del`,
               attributes: { type: "button", class: "btnDeleteTask", value: task.id },
+              nested: [
+                {
+                  tag: `img`,
+                  attributes: { src: "./images/delete_FILL0_wght400_GRAD0_opsz48.svg", width: "20", height: "20" }
+                }
+              ]
             }
           ]
         }
       ]
     }
   );
+  // Change style if task completed
   taskCard.querySelector("#markComplete").checked = task.isCompleted;
+  const taskHeading = taskCard.querySelector(".taskCard_heading");
+  if (task.isCompleted) {
+    const taskHeading = taskCard.querySelector(".taskCard_heading");
+    const buttons = taskCard.querySelectorAll(".buttonArea button");
+    buttons.forEach(btn => btn.style.background = "#fcd2d2");
+    taskHeading.classList.add("text-stroked");
+    taskCard.classList.add("background-pink");
+  } else {
+    taskHeading.style.textDecoration = "none";
+  }
+
   return taskCard;
 };
 
@@ -154,7 +178,7 @@ export let createTaskTitleForm = () => {
       nested: [
         {
           tag: `input`,
-          attributes: { type: "type", id: "inputEditTitle", name: "inputEditTitle" },
+          attributes: { type: "type", id: "inputEditTitle", name: "inputEditTitle", required: "required" },
           nested: []
         },
         {
@@ -177,9 +201,6 @@ export let createTaskTitleForm = () => {
     }
   );
 };
-
-
-
 
 
 
