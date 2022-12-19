@@ -30,7 +30,6 @@ body {
 #toDoApp {
   max-width: 1000px;
   margin: 0 auto;
-  height: 100%;
 }
 
 .controlPanel,
@@ -53,6 +52,7 @@ body {
   overflow-y: scroll;
   padding-bottom: 5px;
   height: 100%;
+  min-height: 60vh;
 }
 
 .aside {
