@@ -23,7 +23,6 @@ body {
   object-fit: cover;
   border-radius: 4px 4px 0px 0px;
 }
-
 .appMain {
   display: flex;
   flex-direction: column;
@@ -32,21 +31,21 @@ body {
   gap: 3rem;
 }
 .card_header {
-  height: 100px;
+  height: 130px;
 }
-
 .card_header figure {
   width: 100%;
   height: 100%;
 }
 .meal_card {
   width: 300px;
-  height: 160px;
+  height: 200px;
   box-shadow: 0px 0px 5px 1px #00000046;
   border-radius: 5px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 .meal_other_info {
   font-size: 0.85rem;
@@ -81,19 +80,24 @@ body {
   position: absolute;
   height: fit-content;
   z-index: 10;
-  top: 50%;
-  left: 50%;
+  top: 50vh;
+  left: 50vw;
   transform: translate(-50%, -50%);
   width: min(500px, 100%);
-  overflow: visible;
+  max-height: 600px;
+  overflow-y: scroll;
 }
 .blur-overlay {
   width: 100vw;
-  height: 100vh;
+  min-height: 100%;
   position: absolute;
   z-index: 5;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.814);
+  background-color: #000000d0;
+}
+.blocked-scrolling {
+  height: calc(100vh - 2rem);
+  overflow: hidden;
 }
 
 .subHeading {
@@ -103,6 +107,8 @@ body {
 }
 .mealSearchForm {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 0.5rem;
   height: 30px;
   align-items: center;

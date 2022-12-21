@@ -159,7 +159,7 @@ const createMealDetails = async (data) => {
               text: `${data.strInstructions}`,
             }
           ]
-        },
+        }
         // { //video error Cross-Origin Read Blocking (CORB) blocked cross-origin
         //   tag: `video`,
         //   text: `Video is not available`, //meal video
@@ -182,12 +182,14 @@ const cardClickEvent = (card) => {
       card.querySelector(".meal_other_info").remove();
       card.classList.remove("rise-above");
       document.querySelector(".blur-overlay").remove();
+      app.classList.remove("blocked-scrolling");
     } else {
       fetchMealByID(card.id.slice(2));
       card.classList.add("rise-above");
       const blurOverlayBox = document.createElement("div");
       blurOverlayBox.classList.add("blur-overlay");
       app.append(blurOverlayBox);
+      app.classList.add("blocked-scrolling");
     }
 
   });
