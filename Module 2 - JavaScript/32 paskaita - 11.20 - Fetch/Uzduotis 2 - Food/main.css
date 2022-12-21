@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+button,
+input {
+  display: block;
+  font-family: "Nunito Sans", sans-serif;
+  outline: none;
+}
+body {
+  font-family: "Nunito Sans", sans-serif;
+  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+  padding-block: 1rem;
+}
+.card_header figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px 4px 0px 0px;
+}
+
+.appMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.card_header {
+  height: 100px;
+}
+
+.card_header figure {
+  width: 100%;
+  height: 100%;
+}
+.meal_card {
+  width: 300px;
+  height: 160px;
+  box-shadow: 0px 0px 5px 1px #00000046;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+.meal_other_info {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: #2e2e2e;
+}
+.meal_other_info > * {
+  height: fit-content;
+  margin-block: 1rem;
+  display: flex;
+  flex-flow: column;
+  gap: 0.5rem;
+}
+.mealResultsDisplayDiv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+.card_main {
+  padding: 0.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.meal_description {
+  align-self: center;
+  text-align: center;
+}
+.rise-above {
+  position: absolute;
+  height: fit-content;
+  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(500px, 100%);
+  overflow: visible;
+}
+.blur-overlay {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.814);
+}
+
+.subHeading {
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #000;
+}
+.mealSearchForm {
+  display: flex;
+  gap: 0.5rem;
+  height: 30px;
+  align-items: center;
+}
+.mealIngredientSearchDiv {
+  display: flex;
+  gap: 0.5rem;
+}
+.btnMealSearch {
+  width: 100px;
+  background-color: #ffe4c4;
+  border: 1px solid grey;
+  border-radius: 2px;
+}
+.btnMealSearch:hover {
+  background-color: #fbc584;
+}
+.btnMealSearch:active {
+  background-color: #ffe4c4;
+}
