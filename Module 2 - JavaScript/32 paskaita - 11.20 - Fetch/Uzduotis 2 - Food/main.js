@@ -118,14 +118,39 @@ const createMealCard = async (data) => {
 // Sukuriam papildomos info elementa, atsirasianti paspaudus ant korteles
 const createMealDetails = async (data) => {
 
-  const ingredients = Object.keys(data)
-    .filter(el => el.includes("strIngredient") && data[el])
-    .map(el => data[el]);
-  const ingredientMeasures = Object.keys(data)
-    .filter(el => el.includes("strMeasure") && data[el])
-    .map(el => data[el]);
+  const [ingredients, ingredientMeasures] = [
+    Object.keys(data)
+      .filter(el => el.includes("strIngredient") && data[el])
+      .map(el => data[el]),
+    Object.keys(data)
+      .filter(el => el.includes("strMeasure") && data[el])
+      .map(el => data[el])
+  ];
 
-  return new Element(
+  const ingredientListElement = (ingredients, ingredientMeasures) => {
+    const ul = new Element({ tag: `ul` });
+    ingredients.forEach((el, i) => {
+      const li = new Element(
+        {
+          tag: `li`,
+          nested: [
+            {
+              tag: `span`,
+              text: `${el}`,
+            },
+            {
+              tag: `span`,
+              text: `${ingredientMeasures[i]}`,
+            }
+          ]
+        }
+      );
+      ul.append(li);
+    });
+    return ul;
+  };
+
+  const mealDetails = new Element(
     {// meal other info
       tag: `div`,
       attributes: { class: "meal_other_info" },
@@ -141,7 +166,6 @@ const createMealDetails = async (data) => {
             },
             {
               tag: `p`,
-              text: `${ingredients.map((el, i) => `${el} - ${ingredientMeasures[i]}`).join(` / `)}`,
             }
           ]
         },
@@ -174,6 +198,18 @@ const createMealDetails = async (data) => {
       ]
     }
   );
+
+  // mealDetails.prepend(
+  //   ingredientListElement(ingredients, ingredientMeasures)
+  // );
+
+  mealDetails
+    .querySelector(".meal_ingredients")
+    .append(
+      ingredientListElement(ingredients, ingredientMeasures)
+    );
+
+  return mealDetails;
 };
 
 const cardClickEvent = (card) => {
