@@ -57,13 +57,14 @@ label {
 }
 
 .gameCard {
-  width: min(250px, 100%);
-  height: 454px;
+  width: min(300px, 100%);
+  height: 500px;
   border: 1px solid #808080;
   border-radius: 5px;
   display: grid;
   padding-top: 0.5rem;
   position: relative;
+  font-size: 0.8rem;
 }
 .gameCard .cardInfo {
   overflow-y: scroll;
@@ -117,11 +118,30 @@ label {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
   border-radius: 3px 3px 0px 0px;
 }
 
 .gameCard-selected {
   border: 2px solid red;
+}
+
+.cardInfo {
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.cardInfo > * {
+  margin-bottom: 0.7rem;
+}
+
+.cardAdditionalInfo > * {
+  margin-bottom: 0.5rem;
+}
+
+.cardGenreYear {
+  font-style: italic;
 }
 
 form {
@@ -168,6 +188,10 @@ form button {
 }
 .modal-content-box .gameCard {
   flex: 1;
+}
+.modal-content-box .gameCard figure {
+  height: 180px;
+  width: 50%;
 }
 .modal-content-box .gameCard:hover .cardBtn {
   visibility: hidden;

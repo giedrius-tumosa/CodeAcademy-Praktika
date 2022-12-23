@@ -23,6 +23,10 @@
   }
   .gameCard {
     flex: 1;
+    figure {
+      height: 180px;
+      width: 50%;
+    }
     &:hover .cardBtn {
       visibility: hidden;
     }
