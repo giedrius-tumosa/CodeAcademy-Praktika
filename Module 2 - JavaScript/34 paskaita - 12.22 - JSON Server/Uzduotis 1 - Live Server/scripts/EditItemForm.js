@@ -1,8 +1,8 @@
 import Element from "./Element.js";
-import { uploadGame } from "./functions.js";
+import { editGame, uploadGame } from "./functions.js";
 import Game from "./Game.js";
 
-export default class AddItemForm {
+export default class EditItemForm {
   constructor() {
     return this.render();
   }
@@ -10,8 +10,23 @@ export default class AddItemForm {
     const form = new Element(
       {
         tag: `form`,
-        attributes: { class: "addItemForm" },
+        attributes: { class: "editItemForm" },
         nested: [
+          {
+            tag: `div`,
+            attributes: { class: "inpGameIdDiv" },
+            nested: [
+              {
+                tag: `label`,
+                text: `Game ID: `,
+                attributes: { for: "inpGameId" },
+              },
+              {
+                tag: `input`,
+                attributes: { type: "number", id: "inpGameId", name: "inpGameId", min: 1, required: "required" },
+              }
+            ]
+          },
           {
             tag: `div`,
             attributes: { class: "inpGameTitleDiv" },
@@ -23,7 +38,7 @@ export default class AddItemForm {
               },
               {
                 tag: `input`,
-                attributes: { type: "text", id: "inpGameTitle", name: "inpGameTitle", required: "required" },
+                attributes: { type: "text", id: "inpGameTitle", name: "inpGameTitle" },
               }
             ]
           },
@@ -38,7 +53,7 @@ export default class AddItemForm {
               },
               {
                 tag: `input`,
-                attributes: { type: "text", id: "inpGamePublisher", name: "inpGamePublisher", required: "required" },
+                attributes: { type: "text", id: "inpGamePublisher", name: "inpGamePublisher" },
               }
             ]
           },
@@ -53,7 +68,7 @@ export default class AddItemForm {
               },
               {
                 tag: `input`,
-                attributes: { type: "text", id: "inpGameDeveloper", name: "inpGameDeveloper", required: "required" },
+                attributes: { type: "text", id: "inpGameDeveloper", name: "inpGameDeveloper" },
               }
             ]
           },
@@ -68,7 +83,7 @@ export default class AddItemForm {
               },
               {
                 tag: `input`,
-                attributes: { type: "number", id: "inpGameYear", name: "inpGameYear", min: "1900", required: "required" },
+                attributes: { type: "number", id: "inpGameYear", name: "inpGameYear", min: "1900" },
               }
             ]
           },
@@ -83,7 +98,7 @@ export default class AddItemForm {
               },
               {
                 tag: `textarea`,
-                attributes: { id: "inpGameDecsription", name: "inpGameDecsription", required: "required" },
+                attributes: { id: "inpGameDecsription", name: "inpGameDecsription" },
               }
             ]
           },
@@ -98,7 +113,7 @@ export default class AddItemForm {
               },
               {
                 tag: `input`,
-                attributes: { type: "text", id: "inpGameGenre", name: "inpGameGenre", required: "required" },
+                attributes: { type: "text", id: "inpGameGenre", name: "inpGameGenre" },
               }
             ]
           },
@@ -113,18 +128,18 @@ export default class AddItemForm {
               },
               {
                 tag: `input`,
-                attributes: { type: "url", id: "inpGameImageURL", name: "inpGameImageURL", required: "required" },
+                attributes: { type: "url", id: "inpGameImageURL", name: "inpGameImageURL" },
               }
             ]
           },
           {
             tag: `div`,
-            attributes: { class: "btnAddMovietDiv" },
+            attributes: { class: "btnEditMovietDiv" },
             nested: [
               {
                 tag: `button`,
-                text: `Add movie`,
-                attributes: { class: "btnAddMovie", type: "submit" },
+                text: `Edit movie`,
+                attributes: { class: "btnEditMovie", type: "submit" },
               }
             ]
           }
@@ -133,16 +148,17 @@ export default class AddItemForm {
     );
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      uploadGame(new Game(
-        e.target.elements.inpGameTitle.value,
-        e.target.elements.inpGamePublisher.value,
-        e.target.elements.inpGameDeveloper.value,
-        e.target.elements.inpGameYear.value,
-        e.target.elements.inpGameDecsription.value,
-        e.target.elements.inpGameGenre.value,
-        e.target.elements.inpGameImageURL.value,
-      ));
-
+      editGame(
+        e.target.elements.inpGameId.value,
+        new Game(
+          e.target.elements.inpGameTitle.value,
+          e.target.elements.inpGamePublisher.value,
+          e.target.elements.inpGameDeveloper.value,
+          e.target.elements.inpGameYear.value,
+          e.target.elements.inpGameDecsription.value,
+          e.target.elements.inpGameGenre.value,
+          e.target.elements.inpGameImageURL.value,
+        ));
     });
     return form;
   }

@@ -1,0 +1,41 @@
+#app > * {
+  border: 1px solid black;
+  padding: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+// GENERAL
+body {
+  min-height: 100vh;
+  font-family: "Nunito Sans", sans-serif;
+}
+#app {
+  position: relative;
+}
+
+input,
+textarea,
+button,
+label {
+  font-family: "Nunito Sans", sans-serif;
+  display: block;
+}
+
+.appHeader {
+  height: 80px;
+}
+.gameCardDisplayArea {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  min-height: 500px;
+}
+
+.appAside {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
