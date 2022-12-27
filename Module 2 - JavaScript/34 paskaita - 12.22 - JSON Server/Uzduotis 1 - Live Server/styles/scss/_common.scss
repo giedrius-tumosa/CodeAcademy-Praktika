@@ -1,5 +1,4 @@
 #app > * {
-  border: 1px solid black;
   padding: 1rem;
 }
 
@@ -11,6 +10,7 @@
 body {
   min-height: 100vh;
   font-family: "Nunito Sans", sans-serif;
+  background-image: url("../../images/POSTER_movie_film_movies_posters_5120x2880.jpg");
 }
 #app {
   position: relative;
@@ -26,6 +26,7 @@ label {
 
 .appHeader {
   height: 80px;
+  background-image: linear-gradient(to right, white, rgb(228, 228, 228));
 }
 .gameCardDisplayArea {
   display: flex;
@@ -37,5 +38,5 @@ label {
 .appAside {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
 }

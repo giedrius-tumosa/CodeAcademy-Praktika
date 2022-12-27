@@ -154,6 +154,8 @@ export default class GameCard {
         labelID.classList.add("hidden");
 
 
+
+
       });
 
     return newGameCard;

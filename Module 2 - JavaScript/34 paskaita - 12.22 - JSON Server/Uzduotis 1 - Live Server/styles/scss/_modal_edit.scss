@@ -8,7 +8,7 @@
 }
 .modal-content-box {
   z-index: 10;
-  position: absolute;
+  position: fixed;
   top: 50vh;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -23,13 +23,21 @@
   }
   .gameCard {
     flex: 1;
+    grid-template-columns: 100%;
+    overflow-y: scroll;
     figure {
-      height: 180px;
-      width: 50%;
+      // height: 180px;
+      width: 100%;
     }
     &:hover .cardBtn {
       visibility: hidden;
     }
+    .cardInfo {
+      overflow-y: unset;
+    }
+  }
+  .editItemForm {
+    margin-top: 1rem;
   }
 
   .modalExitBtn {
@@ -37,10 +45,6 @@
     top: 10px;
     left: 10px;
   }
-}
-.blocked-scrolling {
-  height: 100vh;
-  overflow: hidden;
 }
 
 @media screen and (max-width: 699px) {
@@ -65,9 +69,5 @@
       left: unset;
       align-self: flex-end;
     }
-  }
-  .blocked-scrolling {
-    height: unset;
-    overflow: visible;
   }
 }

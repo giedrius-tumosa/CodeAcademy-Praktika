@@ -1,8 +1,10 @@
 form {
   display: grid;
   gap: 0.5rem;
-  width: min(300px, 100%);
-  // border: 1px solid red;
+  width: min(500px, 100%);
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
   & > * {
     display: flex;
     align-items: center;

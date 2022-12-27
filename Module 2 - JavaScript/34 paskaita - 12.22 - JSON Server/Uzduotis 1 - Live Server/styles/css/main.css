@@ -14,7 +14,6 @@ img {
 }
 
 #app > * {
-  border: 1px solid black;
   padding: 1rem;
 }
 
@@ -25,6 +24,7 @@ img {
 body {
   min-height: 100vh;
   font-family: "Nunito Sans", sans-serif;
+  background-image: url("../../images/POSTER_movie_film_movies_posters_5120x2880.jpg");
 }
 
 #app {
@@ -41,6 +41,7 @@ label {
 
 .appHeader {
   height: 80px;
+  background-image: linear-gradient(to right, white, rgb(228, 228, 228));
 }
 
 .gameCardDisplayArea {
@@ -53,18 +54,20 @@ label {
 .appAside {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .gameCard {
-  width: min(300px, 100%);
-  height: 500px;
+  width: min(500px, 100%);
+  height: 350px;
   border: 1px solid #808080;
-  border-radius: 5px;
+  border-radius: 10px;
   display: grid;
+  grid-template-columns: 1fr 1fr;
   padding-top: 0.5rem;
   position: relative;
   font-size: 0.8rem;
+  background-color: #fff;
 }
 .gameCard .cardInfo {
   overflow-y: scroll;
@@ -108,7 +111,6 @@ label {
 }
 .gameCard figure {
   width: 100%;
-  height: 300px;
   justify-self: center;
   padding: 0.5rem;
 }
@@ -147,7 +149,10 @@ label {
 form {
   display: grid;
   gap: 0.5rem;
-  width: min(300px, 100%);
+  width: min(500px, 100%);
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 10px;
 }
 form > * {
   display: flex;
@@ -172,7 +177,7 @@ form button {
 
 .modal-content-box {
   z-index: 10;
-  position: absolute;
+  position: fixed;
   top: 50vh;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -188,23 +193,25 @@ form button {
 }
 .modal-content-box .gameCard {
   flex: 1;
+  grid-template-columns: 100%;
+  overflow-y: scroll;
 }
 .modal-content-box .gameCard figure {
-  height: 180px;
-  width: 50%;
+  width: 100%;
 }
 .modal-content-box .gameCard:hover .cardBtn {
   visibility: hidden;
+}
+.modal-content-box .gameCard .cardInfo {
+  overflow-y: unset;
+}
+.modal-content-box .editItemForm {
+  margin-top: 1rem;
 }
 .modal-content-box .modalExitBtn {
   position: absolute;
   top: 10px;
   left: 10px;
-}
-
-.blocked-scrolling {
-  height: 100vh;
-  overflow: hidden;
 }
 
 @media screen and (max-width: 699px) {
@@ -229,9 +236,5 @@ form button {
     right: 10px;
     left: unset;
     align-self: flex-end;
-  }
-  .blocked-scrolling {
-    height: unset;
-    overflow: visible;
   }
 }/*# sourceMappingURL=main.css.map */
