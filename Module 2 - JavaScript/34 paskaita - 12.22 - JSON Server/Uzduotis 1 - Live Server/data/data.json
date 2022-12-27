@@ -39,6 +39,26 @@
       "genre": "action-adventure",
       "imageURL": "https://gameroom.lt/4446/marvel-s-spider-man-standard-edition.jpg",
       "id": 4
+    },
+    {
+      "title": "The Callisto Protocol",
+      "publisher": "Krafton, Bluehole Inc.",
+      "developer": "Striking Distance Studios",
+      "releaseYear": "2022",
+      "description": "In this narrative-driven, third-person survival horror game set 300 years in the future, the player will take on the role of Jacob Lee – a victim of fate thrown into Black Iron Prison, a maximum-security penitentiary located on Jupiter's moon, Callisto.",
+      "genre": "horror",
+      "imageURL": "https://gameroom.lt/77959/the-callisto-protocol-day-one-edition.jpg",
+      "id": 5
+    },
+    {
+      "title": "Red Dead Redemption 2",
+      "publisher": " Rockstar Games",
+      "developer": " Rockstar Games",
+      "releaseYear": "2019",
+      "description": "America, 1899. The end of the wild west era has begun as lawmen hunt down the last remaining outlaw gangs. Those who will not surrender or succumb are killed.",
+      "genre": " action-adventure ",
+      "imageURL": "https://gameroom.lt/4751/red-dead-redemption-2-standard-edition.jpg",
+      "id": 6
     }
   ]
 }

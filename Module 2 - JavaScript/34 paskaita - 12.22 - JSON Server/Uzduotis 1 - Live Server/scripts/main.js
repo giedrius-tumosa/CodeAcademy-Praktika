@@ -41,9 +41,15 @@ const gameCardDisplayArea = new Element(
   }
 );
 
+const wrapper = new Element(
+  {
+    tag: `div`,
+    attributes: { class: "wrapper" },
+  }
+);
 
-
-app.append(header, aside, main);
+app.append(aside, wrapper);
+wrapper.append(header, main);
 
 aside.append(new AddItemForm(), new EditItemForm());
 main.append(gameCardDisplayArea);

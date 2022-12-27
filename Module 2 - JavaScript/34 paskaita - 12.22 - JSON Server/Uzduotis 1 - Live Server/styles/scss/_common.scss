@@ -10,7 +10,9 @@
 body {
   min-height: 100vh;
   font-family: "Nunito Sans", sans-serif;
-  background-image: url("../../images/POSTER_movie_film_movies_posters_5120x2880.jpg");
+  background-image: url("../../images/pattern.jpg");
+  background-position: bottom;
+  background-attachment: fixed;
 }
 #app {
   position: relative;
@@ -26,7 +28,9 @@ label {
 
 .appHeader {
   height: 80px;
-  background-image: linear-gradient(to right, white, rgb(228, 228, 228));
+  background-color: #0000004d;
+  margin-bottom: 2rem;
+  color: #fff;
 }
 .gameCardDisplayArea {
   display: flex;
@@ -34,9 +38,30 @@ label {
   gap: 1rem;
   min-height: 500px;
 }
-
+.wrapper {
+  margin-left: 400px;
+}
 .appAside {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  width: min(400px, 100%);
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+@media screen and (max-width: 800px) {
+  .appAside {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: min(400px, 100%);
+    position: static;
+    left: unset;
+    top: unset;
+  }
+  .wrapper {
+    margin: unset;
+  }
 }

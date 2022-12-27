@@ -15,7 +15,7 @@
       "publisher": "Sony Computer Entertainment",
       "developer": "Santa Monica Studio",
       "releaseYear": "2018",
-      "description": "Laba diena.",
+      "description": "God of War[b] is an action-adventure game developed by Santa Monica Studio and published by Sony Interactive Entertainment. It was released for the PlayStation 4 in April 2018, with a Windows port in January 2022. The game is the eighth installment in the God of War series, the eighth chronologically, and the sequel to 2010's God of War III. Unlike previous games, which were loosely based on Greek mythology, this installment is loosely inspired by Norse mythology, with the majority of it set in ancient Scandinavia in the realm of Midgard.",
       "genre": "third-person",
       "imageURL": "https://gameroom.lt/43644/god-of-war-standard-edition.jpg",
       "id": 2
@@ -34,11 +34,31 @@
       "title": "Marvel's Spider-Man",
       "publisher": "Sony Interactive Entertainment",
       "developer": "Insomniac Games[",
-      "releaseYear": "2018",
+      "releaseYear": "2020",
       "description": "Marvel's Spider-Man[b] is a 2018 action-adventure game developed by Insomniac Games and published by Sony Interactive Entertainment. Based on the Marvel Comics character Spider-Man, it tells an original narrative that is inspired by the long-running comic book mythology, while also drawing from various adaptations in other media. In the main story, the super-human crime lord Mister Negative orchestrates a plot to seize control of New York City's criminal underworld. When Mister Negative threatens to release a deadly virus, Spider-Man must confront him and protect the city while dealing with the personal problems of his civilian persona, Peter Parker.",
       "genre": "action-adventure",
       "imageURL": "https://gameroom.lt/4446/marvel-s-spider-man-standard-edition.jpg",
       "id": 4
+    },
+    {
+      "title": "The Callisto Protocol",
+      "publisher": "Krafton, Bluehole Inc.",
+      "developer": "Striking Distance Studios",
+      "releaseYear": "2022",
+      "description": "In this narrative-driven, third-person survival horror game set 300 years in the future, the player will take on the role of Jacob Lee – a victim of fate thrown into Black Iron Prison, a maximum-security penitentiary located on Jupiter's moon, Callisto.",
+      "genre": "horror",
+      "imageURL": "https://gameroom.lt/77959/the-callisto-protocol-day-one-edition.jpg",
+      "id": 5
+    },
+    {
+      "title": "Red Dead Redemption 2",
+      "publisher": " Rockstar Games",
+      "developer": " Rockstar Games",
+      "releaseYear": "2019",
+      "description": "America, 1899. The end of the wild west era has begun as lawmen hunt down the last remaining outlaw gangs. Those who will not surrender or succumb are killed.",
+      "genre": " action-adventure ",
+      "imageURL": "https://gameroom.lt/4751/red-dead-redemption-2-standard-edition.jpg",
+      "id": 6
     }
   ]
 }

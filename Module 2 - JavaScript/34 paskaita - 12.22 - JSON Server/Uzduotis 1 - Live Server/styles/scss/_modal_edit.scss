@@ -25,9 +25,9 @@
     flex: 1;
     grid-template-columns: 100%;
     overflow-y: scroll;
+    height: 500px;
     figure {
-      // height: 180px;
-      width: 100%;
+      width: 80%;
     }
     &:hover .cardBtn {
       visibility: hidden;
@@ -44,6 +44,7 @@
     position: absolute;
     top: 10px;
     left: 10px;
+    padding: 5px;
   }
 }
 
@@ -53,9 +54,12 @@
     top: 2rem;
     left: unset;
     transform: unset;
+    height: 400px;
+    display: block;
+    overflow-y: scroll;
     .modalExitBtn {
       position: absolute;
-      top: 10vh;
+      top: 10px;
       left: 10px;
     }
     .editItemForm {

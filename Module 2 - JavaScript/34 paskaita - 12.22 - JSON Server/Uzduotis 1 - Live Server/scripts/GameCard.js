@@ -66,7 +66,7 @@ export default class GameCard {
                     nested: [
                       {
                         tag: `span`,
-                        text: `${this.props.genre} / `,
+                        text: `${this.props.genre.toUpperCase()} / `,
                         attributes: { class: "cardGenre" },
                       }, {
                         tag: `span`,
