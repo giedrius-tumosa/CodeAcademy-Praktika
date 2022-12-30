@@ -152,27 +152,12 @@ export default class GameCard {
         inputID.classList.add("hidden");
         inputID.setAttribute("value", cardID);
         labelID.classList.add("hidden");
-
-
-
-
       });
 
     return newGameCard;
 
   }
 }
-// newGameCard.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   const selectCardInput = newGameCard.querySelector("#cardSelectionInput");
-//   if (selectCardInput.checked) {
-//     selectCardInput.checked = false;
-//     newGameCard.classList.add("gameCard-selected");
-//   } else {
-//     selectCardInput.checked = true;
-//     newGameCard.classList.remove("gameCard-selected");
-//   }
-//   displayGameCards(newGameCard.parentElement);
-// });
+
 
 

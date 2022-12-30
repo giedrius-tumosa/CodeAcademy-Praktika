@@ -13,14 +13,6 @@ img {
      object-fit: cover;
 }
 
-#app > * {
-  padding: 1rem;
-}
-
-.hidden {
-  display: none;
-}
-
 body {
   min-height: 100vh;
   font-family: "Nunito Sans", sans-serif;
@@ -31,6 +23,15 @@ body {
 
 #app {
   position: relative;
+  min-height: 100vh;
+}
+
+#app > * {
+  padding: 1rem;
+}
+
+.hidden {
+  display: none;
 }
 
 input,
@@ -39,13 +40,16 @@ button,
 label {
   font-family: "Nunito Sans", sans-serif;
   display: block;
+  outline: none;
 }
 
 .appHeader {
   height: 80px;
-  background-color: rgba(0, 0, 0, 0.3019607843);
+  background-color: #fff;
   margin-bottom: 2rem;
-  color: #fff;
+  color: #000;
+  padding: 1rem;
+  border-radius: 10px;
 }
 
 .gameCardDisplayArea {
@@ -53,10 +57,13 @@ label {
   flex-wrap: wrap;
   gap: 1rem;
   min-height: 500px;
+  justify-content: center;
 }
 
 .wrapper {
   margin-left: 400px;
+  z-index: 5;
+  position: relative;
 }
 
 .appAside {
@@ -67,6 +74,7 @@ label {
   position: fixed;
   left: 0;
   top: 0;
+  z-index: 2;
 }
 
 @media screen and (max-width: 800px) {
@@ -109,7 +117,7 @@ label {
   top: 5px;
   right: 5px;
   place-content: center;
-  background-color: red;
+  background-color: rgb(175, 0, 175);
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -238,10 +246,14 @@ form button {
 .modal-content-box .editItemForm {
   margin-top: 1rem;
 }
+.modal-content-box .editItemForm input,
+.modal-content-box .editItemForm textarea {
+  border: 1px solid black;
+}
 .modal-content-box .modalExitBtn {
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 32px;
   padding: 5px;
 }
 

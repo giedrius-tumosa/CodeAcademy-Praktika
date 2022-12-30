@@ -81,3 +81,8 @@ fetch("./data/movies.json")
 
 
 
+fetch("./data/data.txt")
+  .then(resp => resp.text())
+  .then(data => {
+    console.log(data.split(/\r?\n/));
+  });

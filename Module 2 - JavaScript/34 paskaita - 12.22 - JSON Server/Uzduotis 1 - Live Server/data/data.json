@@ -51,13 +51,13 @@
       "id": 5
     },
     {
-      "title": "Red Dead Redemption 2",
-      "publisher": " Rockstar Games",
-      "developer": " Rockstar Games",
-      "releaseYear": "2019",
-      "description": "America, 1899. The end of the wild west era has begun as lawmen hunt down the last remaining outlaw gangs. Those who will not surrender or succumb are killed.",
-      "genre": " action-adventure ",
-      "imageURL": "https://gameroom.lt/4751/red-dead-redemption-2-standard-edition.jpg",
+      "title": "Activision",
+      "publisher": "Activision",
+      "developer": "Activision",
+      "releaseYear": "2022",
+      "description": "Call of Duty: Modern Warfare II is the sequel to 2019’s blockbuster Modern Warfare.\nFeaturing the return of the iconic, team leader Captain John Price, the fearless John \"Soap\" MacTavish, the seasoned Sergeant Kyle \"Gaz” Garrick, and the lone wolf himself, fan favorite Simon “Ghost” Riley, players will witness what makes Task Force 141 the legendary squad it is today.",
+      "genre": "Activision",
+      "imageURL": "https://gameroom.lt/69986/call-of-duty-modern-warfare-ii.jpg",
       "id": 6
     }
   ]

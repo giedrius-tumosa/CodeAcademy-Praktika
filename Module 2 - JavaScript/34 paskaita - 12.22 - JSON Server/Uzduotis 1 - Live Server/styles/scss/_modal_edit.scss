@@ -38,12 +38,16 @@
   }
   .editItemForm {
     margin-top: 1rem;
+    input,
+    textarea {
+      border: 1px solid black;
+    }
   }
 
   .modalExitBtn {
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 32px;
     padding: 5px;
   }
 }
